@@ -46,8 +46,8 @@
         <h1 class="font-semibold">KUROKKU</h1>
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alarm-clock"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/></svg>
       </div>
-      <div class="flex flex-col gap-2">
-     <div class="w-full mt-12 flex gap-4 flex-col shadow-sm border rounded-md p-4">
+      <div class="flex flex-col gap-4">
+     <div class="w-full mt-12 flex gap-4 flex-col shadow-sm border rounded-2xl p-4">
         <h1 class="text-3xl font-normal">Grüß Gott, <span class="font-semibold">Delal </span></h1>
         <p class="text-base">Ich werde dich morgen um 06:00 wecken 😈</p>
      </div>
@@ -129,17 +129,29 @@
           </li>
         </ul>
       </div>
-      <div class="relative mt-4">
-        <div class="absolute inset-0 flex items-center" aria-hidden="true">
-          <div class="w-full border-t border-gray-300"></div>
-        </div>
-        <div class="relative flex justify-start">
-          <span class="bg-white pr-2 text-sm text-gray-500">Morgen, 6. Nov 2024</span>
+
+      <div class="relative mt-4 flex flex-col min-w-0 break-words bg-white shadow-xs rounded-2xl bg-clip-border border ">
+        <div class="flex-auto p-4">
+          <div class="flex flex-wrap -mx-3">
+            <div class="max-w-full px-3 lg:w-1/2 lg:flex-none">
+              <div class="flex flex-col h-full">
+                <h5 class="font-bold">5 Tage streak 🔥</h5>
+                <p class="mb-12">Du hast es die letzten 5 Tage ohne mucken aus dem Bett geschafft, grape!</p>
+              </div>
+            </div>
+            <div class="max-w-full px-3 mt-12 ml-auto text-center lg:mt-0 lg:w-5/12 lg:flex-none">
+              <div class="h-full bg-gradient-to-tl from-blue-500 to-violet-500 rounded-xl">
+                <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-tailwind/img/shapes/waves-white.svg" class="absolute top-0 hidden w-1/2 h-full lg:block" alt="waves" />
+                <div class="relative flex items-center justify-center h-full">
+                  <img class="relative z-20 w-full pt-6" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-tailwind/img/illustrations/rocket-white.png" alt="rocket" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </main>
-    <footer>
-      <p>&copy; 2024 My Website</p>
-    </footer>
+
   </body>
 </html>
