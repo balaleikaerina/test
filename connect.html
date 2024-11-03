@@ -8,42 +8,103 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+<div class="p-4">
+<div class="flex justify-between w-full  items-center text-4xl">
+    <h1 class="font-semibold">KUROKKU</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alarm-clock"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/><path d="M6.38 18.7 4 21"/><path d="M17.64 18.67 20 21"/></svg>
+</div>
+<div class="mb-24 mt-4">
+    <label id="listbox-label" class="block text-sm/6 font-medium text-gray-900">Weckton ändern</label>
+    <div class="relative mt-2">
+        <button type="button" class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm/6" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+            <span class="block truncate">Trompete</span>
+            <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+        <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+          <path fill-rule="evenodd" d="M10.53 3.47a.75.75 0 0 0-1.06 0L6.22 6.72a.75.75 0 0 0 1.06 1.06L10 5.06l2.72 2.72a.75.75 0 1 0 1.06-1.06l-3.25-3.25Zm-4.31 9.81 3.25 3.25a.75.75 0 0 0 1.06 0l3.25-3.25a.75.75 0 1 0-1.06-1.06L10 14.94l-2.72-2.72a.75.75 0 0 0-1.06 1.06Z" clip-rule="evenodd" />
+        </svg>
+      </span>
+        </button>
 
-<div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
+        <!--
+          Select popover, show/hide based on select state.
+
+          Entering: ""
+            From: ""
+            To: ""
+          Leaving: "transition ease-in duration-100"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <ul class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+            <!--
+              Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
+
+              Highlighted: "bg-indigo-600 text-white", Not Highlighted: "text-gray-900"
+            -->
+            <li class="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900" id="listbox-option-0" role="option">
+                <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                <span class="block truncate font-normal">Raketenstart</span>
+
+                <!--
+                  Checkmark, only display for selected option.
+
+                  Highlighted: "text-white", Not Highlighted: "text-indigo-600"
+                -->
+                <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+          </svg>
+        </span>
+            </li>
+
+            <!-- More items... -->
+        </ul>
+    </div>
+</div>
+
+<div class="w-full  p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700">
     <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
-        Connect wallet
+        Kalender verbinden
     </h5>
-    <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Connect with one of our available wallet providers or create a new one.</p>
+    <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
+        Verbinde deinen Kalender, um Benachrichtigungen zu erhalten und Korukku zu personalisieren.
+    </p>
     <ul class="my-4 space-y-3">
         <li>
             <a href="#" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                <svg aria-hidden="true" class="h-4" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39.0728 0L21.9092 12.6999L25.1009 5.21543L39.0728 0Z" fill="#E17726"/><path d="M0.966797 0.0151367L14.9013 5.21656L17.932 12.7992L0.966797 0.0151367Z" fill="#E27625"/><path d="M32.1656 27.0093L39.7516 27.1537L37.1004 36.1603L27.8438 33.6116L32.1656 27.0093Z" fill="#E27625"/><path d="M7.83409 27.0093L12.1399 33.6116L2.89876 36.1604L0.263672 27.1537L7.83409 27.0093Z" fill="#E27625"/><path d="M17.5203 10.8677L17.8304 20.8807L8.55371 20.4587L11.1924 16.4778L11.2258 16.4394L17.5203 10.8677Z" fill="#E27625"/><path d="M22.3831 10.7559L28.7737 16.4397L28.8067 16.4778L31.4455 20.4586L22.1709 20.8806L22.3831 10.7559Z" fill="#E27625"/><path d="M12.4115 27.0381L17.4768 30.9848L11.5928 33.8257L12.4115 27.0381Z" fill="#E27625"/><path d="M27.5893 27.0376L28.391 33.8258L22.5234 30.9847L27.5893 27.0376Z" fill="#E27625"/><path d="M22.6523 30.6128L28.6066 33.4959L23.0679 36.1282L23.1255 34.3884L22.6523 30.6128Z" fill="#D5BFB2"/><path d="M17.3458 30.6143L16.8913 34.3601L16.9286 36.1263L11.377 33.4961L17.3458 30.6143Z" fill="#D5BFB2"/><path d="M15.6263 22.1875L17.1822 25.4575L11.8848 23.9057L15.6263 22.1875Z" fill="#233447"/><path d="M24.3739 22.1875L28.133 23.9053L22.8184 25.4567L24.3739 22.1875Z" fill="#233447"/><path d="M12.8169 27.0049L11.9606 34.0423L7.37109 27.1587L12.8169 27.0049Z" fill="#CC6228"/><path d="M27.1836 27.0049L32.6296 27.1587L28.0228 34.0425L27.1836 27.0049Z" fill="#CC6228"/><path d="M31.5799 20.0605L27.6165 24.0998L24.5608 22.7034L23.0978 25.779L22.1387 20.4901L31.5799 20.0605Z" fill="#CC6228"/><path d="M8.41797 20.0605L17.8608 20.4902L16.9017 25.779L15.4384 22.7038L12.3988 24.0999L8.41797 20.0605Z" fill="#CC6228"/><path d="M8.15039 19.2314L12.6345 23.7816L12.7899 28.2736L8.15039 19.2314Z" fill="#E27525"/><path d="M31.8538 19.2236L27.2061 28.2819L27.381 23.7819L31.8538 19.2236Z" fill="#E27525"/><path d="M17.6412 19.5088L17.8217 20.6447L18.2676 23.4745L17.9809 32.166L16.6254 25.1841L16.625 25.1119L17.6412 19.5088Z" fill="#E27525"/><path d="M22.3562 19.4932L23.3751 25.1119L23.3747 25.1841L22.0158 32.1835L21.962 30.4328L21.75 23.4231L22.3562 19.4932Z" fill="#E27525"/><path d="M27.7797 23.6011L27.628 27.5039L22.8977 31.1894L21.9414 30.5138L23.0133 24.9926L27.7797 23.6011Z" fill="#F5841F"/><path d="M12.2373 23.6011L16.9873 24.9926L18.0591 30.5137L17.1029 31.1893L12.3723 27.5035L12.2373 23.6011Z" fill="#F5841F"/><path d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z" fill="#C0AC9D"/><path d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z" fill="#161616"/><path d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z" fill="#763E1A"/><path d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z" fill="#763E1A"/><path d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z" fill="#F5841F"/><path d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z" fill="#F5841F"/><path d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z" fill="#F5841F"/></svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">MetaMask</span>
-                <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Popular</span>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+                    <path d="M 23.607422 4.0429688 C 23.347041 4.0335549 23.0813 4.0541387 22.814453 4.1074219 L 7.6171875 7.1464844 C 5.5228355 7.5659519 4 9.4229991 4 11.558594 L 4 36.441406 C 4 38.576376 5.5230144 40.434668 7.6171875 40.853516 L 22.814453 43.892578 C 24.948801 44.31917 27 42.637467 27 40.460938 L 27 38 L 39.5 38 C 42.519774 38 45 35.519774 45 32.5 L 45 16.5 C 45 13.480226 42.519774 11 39.5 11 L 27 11 L 27 7.5390625 C 27 5.6340003 25.430086 4.1088659 23.607422 4.0429688 z M 23.402344 7.0488281 C 23.741566 6.9810934 24 7.1922764 24 7.5390625 L 24 40.460938 C 24 40.807724 23.741273 41.019122 23.402344 40.951172 A 1.50015 1.50015 0 0 0 23.402344 40.949219 L 8.2070312 37.910156 A 1.50015 1.50015 0 0 0 8.2050781 37.910156 C 7.4941947 37.768284 7 37.165812 7 36.441406 L 7 11.558594 C 7 10.834188 7.4953833 10.230423 8.2070312 10.087891 L 23.402344 7.0488281 z M 27 14 L 39.5 14 C 40.898226 14 42 15.101774 42 16.5 L 42 17.226562 L 30.5 24.710938 L 27 22.433594 L 27 14 z M 15.5 16.5 C 13.557292 16.5 12.018637 17.783982 11.183594 19.310547 C 10.34855 20.837112 10 22.669872 10 24.5 C 10 26.330128 10.34855 28.162888 11.183594 29.689453 C 12.018637 31.216018 13.557292 32.5 15.5 32.5 C 17.442708 32.5 18.981363 31.216018 19.816406 29.689453 C 20.65145 28.162888 21 26.330128 21 24.5 C 21 22.669872 20.65145 20.837112 19.816406 19.310547 C 18.981363 17.783982 17.442708 16.5 15.5 16.5 z M 15.5 19.5 C 16.223957 19.5 16.685305 19.841018 17.183594 20.751953 C 17.681883 21.662888 18 23.080128 18 24.5 C 18 25.919872 17.681883 27.337112 17.183594 28.248047 C 16.685305 29.158982 16.223957 29.5 15.5 29.5 C 14.776043 29.5 14.314695 29.158982 13.816406 28.248047 C 13.318117 27.337112 13 25.919872 13 24.5 C 13 23.080128 13.318117 21.662888 13.816406 20.751953 C 14.314695 19.841018 14.776043 19.5 15.5 19.5 z M 42 20.806641 L 42 32.5 C 42 33.898226 40.898226 35 39.5 35 L 27 35 L 27 26.011719 L 29.681641 27.757812 A 1.50015 1.50015 0 0 0 31.318359 27.757812 L 42 20.806641 z"></path>
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Outlook</span>
+                <span class="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Verbunden</span>
             </a>
         </li>
         <li>
             <a href="#" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                <svg aria-hidden="true" class="h-5" viewBox="0 0 292 292" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M145.7 291.66C226.146 291.66 291.36 226.446 291.36 146C291.36 65.5541 226.146 0.339844 145.7 0.339844C65.2542 0.339844 0.0400391 65.5541 0.0400391 146C0.0400391 226.446 65.2542 291.66 145.7 291.66Z" fill="#3259A5"/><path d="M195.94 155.5C191.49 179.08 170.8 196.91 145.93 196.91C117.81 196.91 95.0204 174.12 95.0204 146C95.0204 117.88 117.81 95.0897 145.93 95.0897C170.8 95.0897 191.49 112.93 195.94 136.5H247.31C242.52 84.7197 198.96 44.1797 145.93 44.1797C89.6904 44.1797 44.1104 89.7697 44.1104 146C44.1104 202.24 89.7004 247.82 145.93 247.82C198.96 247.82 242.52 207.28 247.31 155.5H195.94Z" fill="white"/></svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Coinbase Wallet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+                    <rect width="22" height="22" x="13" y="13" fill="#fff"></rect><polygon fill="#1e88e5" points="25.68,20.92 26.688,22.36 28.272,21.208 28.272,29.56 30,29.56 30,18.616 28.56,18.616"></polygon><path fill="#1e88e5" d="M22.943,23.745c0.625-0.574,1.013-1.37,1.013-2.249c0-1.747-1.533-3.168-3.417-3.168 c-1.602,0-2.972,1.009-3.33,2.453l1.657,0.421c0.165-0.664,0.868-1.146,1.673-1.146c0.942,0,1.709,0.646,1.709,1.44 c0,0.794-0.767,1.44-1.709,1.44h-0.997v1.728h0.997c1.081,0,1.993,0.751,1.993,1.64c0,0.904-0.866,1.64-1.931,1.64 c-0.962,0-1.784-0.61-1.914-1.418L17,26.802c0.262,1.636,1.81,2.87,3.6,2.87c2.007,0,3.64-1.511,3.64-3.368 C24.24,25.281,23.736,24.363,22.943,23.745z"></path><polygon fill="#fbc02d" points="34,42 14,42 13,38 14,34 34,34 35,38"></polygon><polygon fill="#4caf50" points="38,35 42,34 42,14 38,13 34,14 34,34"></polygon><path fill="#1e88e5" d="M34,14l1-4l-1-4H9C7.343,6,6,7.343,6,9v25l4,1l4-1V14H34z"></path><polygon fill="#e53935" points="34,34 34,42 42,34"></polygon><path fill="#1565c0" d="M39,6h-5v8h8V9C42,7.343,40.657,6,39,6z"></path><path fill="#1565c0" d="M9,42h5v-8H6v5C6,40.657,7.343,42,9,42z"></path>
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">Google Calendar</span>
             </a>
         </li>
         <li>
             <a href="#" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                <svg aria-hidden="true" svg class="h-5"viewBox="0 0 75.591 75.591" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientTransform="matrix(0 -54.944 -54.944 0 23.62 79.474)" gradientUnits="userSpaceOnUse" x2="1"><stop offset="0" stop-color="#ff1b2d"/><stop offset=".3" stop-color="#ff1b2d"/><stop offset=".614" stop-color="#ff1b2d"/><stop offset="1" stop-color="#a70014"/></linearGradient><linearGradient id="b" gradientTransform="matrix(0 -48.595 -48.595 0 37.854 76.235)" gradientUnits="userSpaceOnUse" x2="1"><stop offset="0" stop-color="#9c0000"/><stop offset=".7" stop-color="#ff4b4b"/><stop offset="1" stop-color="#ff4b4b"/></linearGradient><g transform="matrix(1.3333 0 0 -1.3333 0 107.2)"><path d="m28.346 80.398c-15.655 0-28.346-12.691-28.346-28.346 0-15.202 11.968-27.609 26.996-28.313.44848-.02115.89766-.03314 1.3504-.03314 7.2574 0 13.876 2.7289 18.891 7.2137-3.3227-2.2036-7.2074-3.4715-11.359-3.4715-6.7504 0-12.796 3.3488-16.862 8.6297-3.1344 3.6999-5.1645 9.1691-5.3028 15.307v1.3349c.13821 6.1377 2.1683 11.608 5.302 15.307 4.0666 5.2809 10.112 8.6297 16.862 8.6297 4.1526 0 8.038-1.2679 11.361-3.4729-4.9904 4.4643-11.569 7.1876-18.786 7.2144-.03596 0-.07122.0014-.10718.0014z" fill="url(#a)"/><path d="m19.016 68.025c2.6013 3.0709 5.9607 4.9227 9.631 4.9227 8.2524 0 14.941-9.356 14.941-20.897s-6.6891-20.897-14.941-20.897c-3.6703 0-7.0297 1.851-9.6303 4.922 4.0659-5.2809 10.111-8.6297 16.862-8.6297 4.1519 0 8.0366 1.2679 11.359 3.4715 5.802 5.1906 9.4554 12.735 9.4554 21.133 0 8.397-3.6527 15.941-9.4533 21.131-3.3234 2.205-7.2088 3.4729-11.361 3.4729-6.7504 0-12.796-3.3488-16.862-8.6297" fill="url(#b)"/></g></svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Opera Wallet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 48 48">
+                    <linearGradient id="iSZtP6eSr5wqIgT3aj5c_a_06SDYXN73bSC_gr1" x1="6.896" x2="27.372" y1="21.436" y2="21.46" gradientUnits="userSpaceOnUse"><stop offset=".309" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><ellipse cx="14.279" cy="21.444" fill="url(#iSZtP6eSr5wqIgT3aj5c_a_06SDYXN73bSC_gr1)" rx="7.163" ry="7.259"></ellipse><linearGradient id="iSZtP6eSr5wqIgT3aj5c_b_06SDYXN73bSC_gr2" x1="1.694" x2="39.022" y1="27.617" y2="27.813" gradientUnits="userSpaceOnUse"><stop offset=".309" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><path fill="url(#iSZtP6eSr5wqIgT3aj5c_b_06SDYXN73bSC_gr2)" d="M46,28.185c0-4.868-3.894-8.815-8.698-8.815c-4.804,0-8.698,3.947-8.698,8.815	c0,0.175,0.016,0.346,0.026,0.519h-8.272c0.037-0.341,0.06-0.686,0.06-1.037c0-5.155-4.123-9.333-9.209-9.333	C6.123,18.333,2,22.512,2,27.667S6.123,37,11.209,37H38C42.564,36.73,46,32.878,46,28.185z"></path><linearGradient id="iSZtP6eSr5wqIgT3aj5c_c_06SDYXN73bSC_gr3" x1="14.368" x2="12.779" y1="37.187" y2="7.309" gradientUnits="userSpaceOnUse"><stop offset=".404" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><path fill="url(#iSZtP6eSr5wqIgT3aj5c_c_06SDYXN73bSC_gr3)" d="M20.175,25.562c-0.943-4.14-4.594-7.229-8.966-7.229c-1.323,0-2.578,0.288-3.715,0.797	c-0.242,0.728-0.378,1.504-0.378,2.314c0,4.009,3.207,7.259,7.163,7.259C16.725,28.704,18.883,27.459,20.175,25.562z"></path><linearGradient id="iSZtP6eSr5wqIgT3aj5c_d_06SDYXN73bSC_gr4" x1="-1.81" x2="39.425" y1="42.205" y2="11.822" gradientUnits="userSpaceOnUse"><stop offset=".309" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><ellipse cx="27.07" cy="20.926" fill="url(#iSZtP6eSr5wqIgT3aj5c_d_06SDYXN73bSC_gr4)" rx="11.767" ry="11.926"></ellipse><linearGradient id="iSZtP6eSr5wqIgT3aj5c_e_06SDYXN73bSC_gr5" x1="31.961" x2="10.537" y1="20.784" y2="21.568" gradientUnits="userSpaceOnUse"><stop offset=".246" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><path fill="url(#iSZtP6eSr5wqIgT3aj5c_e_06SDYXN73bSC_gr5)" d="M17.023,14.739c-1.085,1.805-1.721,3.918-1.721,6.186c0,2.608,0.836,5.014,2.237,6.977	c2.315-1.203,3.902-3.64,3.902-6.458C21.442,18.421,19.617,15.831,17.023,14.739z"></path><linearGradient id="iSZtP6eSr5wqIgT3aj5c_f_06SDYXN73bSC_gr6" x1="26.665" x2="11.328" y1="44.761" y2="9.592" gradientUnits="userSpaceOnUse"><stop offset=".415" stop-color="#33bef0"></stop><stop offset=".652" stop-color="#1797e0"></stop><stop offset=".795" stop-color="#0a85d9"></stop></linearGradient><path fill="url(#iSZtP6eSr5wqIgT3aj5c_f_06SDYXN73bSC_gr6)" d="M15.407,19.368c-0.067,0.51-0.105,1.029-0.105,1.558c0,2.608,0.835,5.012,2.236,6.975	c0.005-0.003,0.011-0.005,0.016-0.007c0.565-0.295,1.086-0.665,1.552-1.095c0.04-0.037,0.076-0.079,0.115-0.118	c0.178-0.172,0.349-0.352,0.509-0.542c0.07-0.083,0.133-0.172,0.199-0.258c0.084-0.11,0.163-0.223,0.241-0.337	C19.55,22.847,17.776,20.604,15.407,19.368z"></path><linearGradient id="iSZtP6eSr5wqIgT3aj5c_g_06SDYXN73bSC_gr7" x1="11.891" x2="37.98" y1="52.879" y2="19.674" gradientUnits="userSpaceOnUse"><stop offset=".309" stop-color="#33bef0"></stop><stop offset="1" stop-color="#0a85d9"></stop></linearGradient><path fill="url(#iSZtP6eSr5wqIgT3aj5c_g_06SDYXN73bSC_gr7)" d="M28.605,28.185c0,1.582,0.417,3.063,1.136,4.346c5.21-1.228,9.096-5.952,9.096-11.606	c0-0.483-0.037-0.956-0.092-1.424c-0.47-0.08-0.95-0.131-1.443-0.131C32.499,19.37,28.605,23.317,28.605,28.185z"></path>
+                </svg>
+                <span class="flex-1 ms-3 whitespace-nowrap">iCloud</span>
             </a>
         </li>
         <li>
             <a href="#" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
                 <svg aria-hidden="true" class="h-5" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><radialGradient cx="0%" cy="50%" fx="0%" fy="50%" r="100%" id="radialGradient-1"><stop stop-color="#5D9DF6" offset="0%"></stop><stop stop-color="#006FFF" offset="100%"></stop></radialGradient></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="logo"><rect id="base" fill="url(#radialGradient-1)" x="0" y="0" width="512" height="512" rx="256"></rect><path d="M169.209772,184.531136 C217.142772,137.600733 294.857519,137.600733 342.790517,184.531136 L348.559331,190.179285 C350.955981,192.525805 350.955981,196.330266 348.559331,198.676787 L328.82537,217.99798 C327.627045,219.171241 325.684176,219.171241 324.485851,217.99798 L316.547278,210.225455 C283.10802,177.485633 228.89227,177.485633 195.453011,210.225455 L186.951456,218.549188 C185.75313,219.722448 183.810261,219.722448 182.611937,218.549188 L162.877976,199.227995 C160.481326,196.881474 160.481326,193.077013 162.877976,190.730493 L169.209772,184.531136 Z M383.602212,224.489406 L401.165475,241.685365 C403.562113,244.031874 403.562127,247.836312 401.165506,250.182837 L321.971538,327.721548 C319.574905,330.068086 315.689168,330.068112 313.292501,327.721609 C313.292491,327.721599 313.29248,327.721588 313.29247,327.721578 L257.08541,272.690097 C256.486248,272.103467 255.514813,272.103467 254.915651,272.690097 C254.915647,272.690101 254.915644,272.690105 254.91564,272.690108 L198.709777,327.721548 C196.313151,330.068092 192.427413,330.068131 190.030739,327.721634 C190.030725,327.72162 190.03071,327.721606 190.030695,327.721591 L110.834524,250.181849 C108.437875,247.835329 108.437875,244.030868 110.834524,241.684348 L128.397819,224.488418 C130.794468,222.141898 134.680206,222.141898 137.076856,224.488418 L193.284734,279.520668 C193.883897,280.107298 194.85533,280.107298 195.454493,279.520668 C195.454502,279.520659 195.45451,279.520651 195.454519,279.520644 L251.65958,224.488418 C254.056175,222.141844 257.941913,222.141756 260.338618,224.488222 C260.338651,224.488255 260.338684,224.488288 260.338717,224.488321 L316.546521,279.520644 C317.145683,280.107273 318.117118,280.107273 318.71628,279.520644 L374.923175,224.489406 C377.319825,222.142885 381.205562,222.142885 383.602212,224.489406 Z" id="WalletConnect" fill="#FFFFFF" fill-rule="nonzero"></path></g></g></svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">WalletConnect</span>
+                <span class="flex-1 ms-3 whitespace-nowrap">Web</span>
             </a>
         </li>
         <li>
             <a href="#" class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
                 <svg aria-hidden="true" class="h-4" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M72.0998 0.600098H48.3998H24.5998H0.799805V24.4001V48.2001V49.7001V71.8001V71.9001V95.5001H24.5998V72.0001V71.9001V49.8001V48.3001V24.5001H48.3998H72.1998H95.9998V0.700104H72.0998V0.600098Z" fill="#617BFF"/><path d="M48.5 71.8002H72.1V95.6002H73C79.1 95.6002 84.9 93.2002 89.2 88.9002C93.5 84.6002 95.9 78.8002 95.9 72.7002V48.2002H48.5V71.8002Z" fill="#617BFF"/></svg>
-                <span class="flex-1 ms-3 whitespace-nowrap">Fortmatic</span>
+                <span class="flex-1 ms-3 whitespace-nowrap">Custom</span>
             </a>
         </li>
     </ul>
@@ -52,8 +113,13 @@
             <svg class="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
             </svg>
-            Why do I need to connect with my wallet?</a>
+            Wieso sollte ich meinen Kalendar verbinden</a>
     </div>
+</div>
+
+</div>
+<div class="fixed z-30 flex align-center px-8 justify-between items-center bottom-0 w-full h-24 bg-black/50 backdrop-blur-md rounded-t-2xl">
+    <a href="index.html"><button class="bg-white  w-full rounded-md p-2 px-6 font-semibold">Zurück</button></a>
 </div>
 
 </body>
